@@ -89,6 +89,10 @@ header{
   padding-bottom: 20px;
 }
 
+.wallet-address-container {
+  color: rgb(232, 174, 70)
+}
+
 .connect-wallet-button {
   background-image: linear-gradient(
     to right,
