@@ -117,12 +117,19 @@ const App = () => {
 
     // check the user's network chain ID
     const chainId = await ethereum.request({ method: 'eth_chainId' });
+
     setNetwork(networks[chainId]);
 
     ethereum.on('chainChanged', handleChainChanged);
+    ethereum.on('accountsChanged', handleAccountsChanged);
 
     // reload the page when network is changed
     function handleChainChanged(_chainId) {
+    	window.location.reload();
+    }
+
+    // reload the page when account is changed
+    function handleAccountsChanged(_accounts) {
     	window.location.reload();
     }
 	}
